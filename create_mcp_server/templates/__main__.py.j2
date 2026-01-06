@@ -1,0 +1,21 @@
+"""{{ project_name }} MCP Server."""
+
+from fastmcp import FastMCP
+
+# Create MCP server
+mcp = FastMCP("{{ project_name }}")
+
+
+@mcp.tool()
+def healthcheck() -> str:
+    """
+    Check the health status of the server.
+    
+    Returns:
+        str: Health status message
+    """
+    return "Server is healthy and running!"
+
+
+if __name__ == "__main__":
+    mcp.run()

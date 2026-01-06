@@ -1,0 +1,35 @@
+# {{ project_name }}
+
+{{ description }}
+
+## Setup
+
+Install dependencies:
+
+```bash
+uv sync
+```
+
+## Running the server
+
+```bash
+uv run python -m {{ package_name }}
+```
+
+## Testing with MCP Inspector
+
+You can test this server using the MCP Inspector:
+
+```bash
+npx @modelcontextprotocol/inspector uv run python -m {{ package_name }}
+```
+
+## Available Tools
+
+- `healthcheck`: Returns the health status of the server
+
+## Development
+
+This project uses:
+- [uv](https://docs.astral.sh/uv/) for package management
+- [fastmcp](https://gofastmcp.com/) for MCP server development

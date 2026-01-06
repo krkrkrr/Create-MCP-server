@@ -3,7 +3,7 @@
 import click
 import sys
 from pathlib import Path
-from .generator import generate_mcp_server
+from .generator import generate_mcp_server, sanitize_package_name
 
 
 @click.group()
@@ -59,11 +59,14 @@ def create(project_name, description, author):
             author=author
         )
         
+        # Get the sanitized package name for instructions
+        package_name = sanitize_package_name(project_name)
+        
         click.echo(f'\n✅ Successfully created {project_name}!')
         click.echo(f'\nNext steps:')
         click.echo(f'  cd {project_name}')
         click.echo(f'  uv sync')
-        click.echo(f'  uv run python -m {project_name.replace("-", "_")}')
+        click.echo(f'  uv run python -m {package_name}')
         
     except Exception as e:
         click.echo(f'\n❌ Error creating project: {e}', err=True)

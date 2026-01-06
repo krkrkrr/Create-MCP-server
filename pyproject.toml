@@ -20,5 +20,5 @@ create-mcp-server = "create_mcp_server.cli:main"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.uv]
-dev-dependencies = []
+[dependency-groups]
+dev = []

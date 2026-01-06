@@ -1,5 +1,6 @@
 """Generator for MCP server projects."""
 
+import re
 from pathlib import Path
 from jinja2 import Environment, PackageLoader, select_autoescape
 
@@ -18,8 +19,12 @@ def generate_mcp_server(project_dir: Path, project_name: str, description: str, 
         lstrip_blocks=True,
     )
     
-    # Convert project name to Python package name (replace hyphens with underscores)
-    package_name = project_name.replace('-', '_')
+    # Convert project name to valid Python package name
+    # Replace invalid characters with underscores, lowercase, and ensure it doesn't start with a digit
+    package_name = re.sub(r'[^a-zA-Z0-9_]', '_', project_name).lower()
+    # Ensure the package name doesn't start with a digit
+    if package_name and package_name[0].isdigit():
+        package_name = '_' + package_name
     
     # Context for templates
     context = {

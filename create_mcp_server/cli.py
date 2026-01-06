@@ -1,7 +1,6 @@
 """CLI interface for create-mcp-server."""
 
 import click
-import os
 import sys
 from pathlib import Path
 from .generator import generate_mcp_server

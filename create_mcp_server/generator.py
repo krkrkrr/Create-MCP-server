@@ -65,6 +65,7 @@ def generate_mcp_server(project_dir: Path, project_name: str, description: str,
         ('README.md.j2', project_dir / 'README.md'),
         ('__init__.py.j2', package_dir / '__init__.py'),
         ('__main__.py.j2', package_dir / '__main__.py'),
+        ('server.py.j2', package_dir / 'server.py'),
         ('.gitignore.j2', project_dir / '.gitignore'),
     ]
 

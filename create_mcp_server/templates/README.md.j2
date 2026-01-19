@@ -8,11 +8,11 @@
 
 Click one of the buttons below to install the MCP server in your preferred IDE:
 
-[![Install in VS Code](https://img.shields.io/badge/Install_in-VS_Code-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=Hoge-Name&config=%7B%22command%22%3A%22uv%22%2C%22args%22%3A%5B%22run%22%2C%22--directory%22%2C%22%3C%2Fpath%2Fto%2Fpackage%3E%22%2C%22-m%22%2C%22%3Cpackage-name%3E%22%5D%2C%22env%22%3A%7B%7D%7D)
-[![Install in VS Code Insiders](https://img.shields.io/badge/Install_in-VS_Code_Insiders-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=Hoge-Name&config=%7B%22command%22%3A%22uv%22%2C%22args%22%3A%5B%22run%22%2C%22--directory%22%2C%22%3C%2Fpath%2Fto%2Fpackage%3E%22%2C%22-m%22%2C%22%3Cpackage-name%3E%22%5D%2C%22env%22%3A%7B%7D%7D&quality=insiders)
-[![Install in Visual Studio](https://img.shields.io/badge/Install_in-Visual_Studio-C16FDE?style=flat-square&logo=visualstudio&logoColor=white)](https://vs-open.link/mcp-install?%7B%22command%22%3A%22uv%22%2C%22args%22%3A%5B%22run%22%2C%22--directory%22%2C%22%3C%2Fpath%2Fto%2Fpackage%3E%22%2C%22-m%22%2C%22%3Cpackage-name%3E%22%5D%2C%22env%22%3A%7B%7D%7D)
-[![Install in Cursor](https://img.shields.io/badge/Install_in-Cursor-000000?style=flat-square&logoColor=white)](https://cursor.com/en/install-mcp?name=Hoge-Name&config=eyJjb21tYW5kIjoidXYiLCJhcmdzIjpbInJ1biIsIi0tZGlyZWN0b3J5IiwiPC9wYXRoL3RvL3BhY2thZ2U+IiwiLW0iLCI8cGFja2FnZS1uYW1lPiJdLCJlbnYiOnt9fQ==)
-[![Add MCP Server Hoge-Name to LM Studio](https://files.lmstudio.ai/deeplink/mcp-install-light.svg)](https://lmstudio.ai/install-mcp?name=Hoge-Name&config=eyJjb21tYW5kIjoidXYiLCJhcmdzIjpbInJ1biIsIi0tZGlyZWN0b3J5IiwiPC9wYXRoL3RvL3BhY2thZ2U+IiwiLW0iLCI8cGFja2FnZS1uYW1lPiJdLCJlbnYiOnt9fQ==)
+[![Install in VS Code](https://img.shields.io/badge/Install_in-VS_Code-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=%7B%7B%20project_name%20%7D%7D&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22%7B%7B%20package_path%20%7D%7D%22%2C%22%7B%7B%20package_name%20%7D%7D%22%5D%2C%22env%22%3A%7B%7D%7D)
+[![Install in VS Code Insiders](https://img.shields.io/badge/Install_in-VS_Code_Insiders-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=%7B%7B%20project_name%20%7D%7D&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22%7B%7B%20package_path%20%7D%7D%22%2C%22%7B%7B%20package_name%20%7D%7D%22%5D%2C%22env%22%3A%7B%7D%7D&quality=insiders)
+[![Install in Visual Studio](https://img.shields.io/badge/Install_in-Visual_Studio-C16FDE?style=flat-square&logo=visualstudio&logoColor=white)](https://vs-open.link/mcp-install?%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22%7B%7B%20package_path%20%7D%7D%22%2C%22%7B%7B%20package_name%20%7D%7D%22%5D%2C%22env%22%3A%7B%7D%7D)
+[![Install in Cursor](https://img.shields.io/badge/Install_in-Cursor-000000?style=flat-square&logoColor=white)](https://cursor.com/en/install-mcp?name=%7B%7B%20project_name%20%7D%7D&config=eyJjb21tYW5kIjoidXZ4IiwiYXJncyI6WyItLWZyb20iLCJ7eyBwYWNrYWdlX3BhdGggfX0iLCJ7eyBwYWNrYWdlX25hbWUgfX0iXSwiZW52Ijp7fX0=)
+[![Add MCP Server {{ project_name }} to LM Studio](https://files.lmstudio.ai/deeplink/mcp-install-light.svg)](https://lmstudio.ai/install-mcp?name=%7B%7B%20project_name%20%7D%7D&config=eyJjb21tYW5kIjoidXZ4IiwiYXJncyI6WyItLWZyb20iLCJ7eyBwYWNrYWdlX3BhdGggfX0iLCJ7eyBwYWNrYWdlX25hbWUgfX0iXSwiZW52Ijp7fX0=)
 
 ### Manual Installation
 
@@ -21,13 +21,11 @@ Click one of the buttons below to install the MCP server in your preferred IDE:
 ```js
 {
   "servers": {
-    "Hoge-Name": {
-      "command": "uv",
+    "{{ project_name }}": {
+      "command": "uvx",
       "args": [
-        "run",
-        "--directory",
+        "--from",
         "{{ package_path }}",
-        "-m",
         "{{ package_name }}"
       ],
       "env": {}
@@ -41,17 +39,17 @@ Click one of the buttons below to install the MCP server in your preferred IDE:
 
 #### Click the button to install:
 
-[![Install in VS Code](https://img.shields.io/badge/Install_in-VS_Code-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=Hoge-Name&config=%7B%22command%22%3A%22uv%22%2C%22args%22%3A%5B%22run%22%2C%22--directory%22%2C%22%3C%2Fpath%2Fto%2Fpackage%3E%22%2C%22-m%22%2C%22%3Cpackage-name%3E%22%5D%2C%22env%22%3A%7B%7D%7D)
+[![Install in VS Code](https://img.shields.io/badge/Install_in-VS_Code-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=%7B%7B%20project_name%20%7D%7D&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22%7B%7B%20package_path%20%7D%7D%22%2C%22%7B%7B%20package_name%20%7D%7D%22%5D%2C%22env%22%3A%7B%7D%7D)
 
 #### Or install manually:
 
-Follow the MCP install [guide](https://code.visualstudio.com/docs/copilot/chat/mcp-servers#_add-an-mcp-server), use the standard config above. You can also install the Hoge-Name MCP server using the VS Code CLI:
+Follow the MCP install [guide](https://code.visualstudio.com/docs/copilot/chat/mcp-servers#_add-an-mcp-server), use the standard config above. You can also install the {{ project_name }} MCP server using the VS Code CLI:
 
 ```bash
-code --add-mcp '{\"name\":\"Hoge-Name\",\"command\":\"uv\",\"args\":[\"run\",\"--directory\",\"{{ package_path }}\",\"-m\",\"{{ package_name }}\"],\"env\":{}}'
+code --add-mcp '{\"name\":\"{{ project_name }}\",\"command\":\"uvx\",\"args\":[\"--from\",\"{{ package_path }}\",\"{{ package_name }}\"],\"env\":{}}'
 ```
 
-After installation, the Hoge-Name MCP server will be available for use with your GitHub Copilot agent in VS Code.
+After installation, the {{ project_name }} MCP server will be available for use with your GitHub Copilot agent in VS Code.
 </details>
 
 <details>
@@ -59,17 +57,17 @@ After installation, the Hoge-Name MCP server will be available for use with your
 
 #### Click the button to install:
 
-[![Install in VS Code Insiders](https://img.shields.io/badge/Install_in-VS_Code_Insiders-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=Hoge-Name&config=%7B%22command%22%3A%22uv%22%2C%22args%22%3A%5B%22run%22%2C%22--directory%22%2C%22%3C%2Fpath%2Fto%2Fpackage%3E%22%2C%22-m%22%2C%22%3Cpackage-name%3E%22%5D%2C%22env%22%3A%7B%7D%7D&quality=insiders)
+[![Install in VS Code Insiders](https://img.shields.io/badge/Install_in-VS_Code_Insiders-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=%7B%7B%20project_name%20%7D%7D&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22%7B%7B%20package_path%20%7D%7D%22%2C%22%7B%7B%20package_name%20%7D%7D%22%5D%2C%22env%22%3A%7B%7D%7D&quality=insiders)
 
 #### Or install manually:
 
-Follow the MCP install [guide](https://code.visualstudio.com/docs/copilot/chat/mcp-servers#_add-an-mcp-server), use the standard config above. You can also install the Hoge-Name MCP server using the VS Code Insiders CLI:
+Follow the MCP install [guide](https://code.visualstudio.com/docs/copilot/chat/mcp-servers#_add-an-mcp-server), use the standard config above. You can also install the {{ project_name }} MCP server using the VS Code Insiders CLI:
 
 ```bash
-code-insiders --add-mcp '{\"name\":\"Hoge-Name\",\"command\":\"uv\",\"args\":[\"run\",\"--directory\",\"{{ package_path }}\",\"-m\",\"{{ package_name }}\"],\"env\":{}}'
+code-insiders --add-mcp '{\"name\":\"{{ project_name }}\",\"command\":\"uvx\",\"args\":[\"--from\",\"{{ package_path }}\",\"{{ package_name }}\"],\"env\":{}}'
 ```
 
-After installation, the Hoge-Name MCP server will be available for use with your GitHub Copilot agent in VS Code Insiders.
+After installation, the {{ project_name }} MCP server will be available for use with your GitHub Copilot agent in VS Code Insiders.
 </details>
 
 <details>
@@ -77,7 +75,7 @@ After installation, the Hoge-Name MCP server will be available for use with your
 
 #### Click the button to install:
 
-[![Install in Visual Studio](https://img.shields.io/badge/Install_in-Visual_Studio-C16FDE?style=flat-square&logo=visualstudio&logoColor=white)](https://vs-open.link/mcp-install?%7B%22command%22%3A%22uv%22%2C%22args%22%3A%5B%22run%22%2C%22--directory%22%2C%22%3C%2Fpath%2Fto%2Fpackage%3E%22%2C%22-m%22%2C%22%3Cpackage-name%3E%22%5D%2C%22env%22%3A%7B%7D%7D)
+[![Install in Visual Studio](https://img.shields.io/badge/Install_in-Visual_Studio-C16FDE?style=flat-square&logo=visualstudio&logoColor=white)](https://vs-open.link/mcp-install?%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22%7B%7B%20package_path%20%7D%7D%22%2C%22%7B%7B%20package_name%20%7D%7D%22%5D%2C%22env%22%3A%7B%7D%7D)
 
 #### Or install manually:
 
@@ -86,10 +84,10 @@ After installation, the Hoge-Name MCP server will be available for use with your
 3. Click the tools icon (🛠️) in the chat toolbar
 4. Click the + "Add Server" button to open the "Configure MCP server" dialog
 5. Fill in the configuration:
-   - **Server ID**: `Hoge-Name`
+   - **Server ID**: `{{ project_name }}`
    - **Type**: Select `stdio` from the dropdown
-   - **Command**: `uv`
-   - **Arguments**: `run --directory {{ package_path }} -m {{ package_name }}`
+   - **Command**: `uvx`
+   - **Arguments**: `--from {{ package_path }} {{ package_name }}`
 6. Click "Save" to add the server
 
 For detailed instructions, see the [Visual Studio MCP documentation](https://learn.microsoft.com/visualstudio/ide/mcp-servers).
@@ -100,7 +98,7 @@ For detailed instructions, see the [Visual Studio MCP documentation](https://lea
 
 #### Click the button to install:
 
-[![Install in Cursor](https://img.shields.io/badge/Install_in-Cursor-000000?style=flat-square&logoColor=white)](https://cursor.com/en/install-mcp?name=Hoge-Name&config=eyJuYW1lIjoiSG9nZS1OYW1lIiwiY29tbWFuZCI6InV2IiwiYXJncyI6WyJydW4iLCItLWRpcmVjdG9yeSIsIjwvcGF0aC90by9wYWNrYWdlPiIsIi1tIiwiPHBhY2thZ2UtbmFtZT4iXSwiZW52Ijp7fX0=)
+[![Install in Cursor](https://img.shields.io/badge/Install_in-Cursor-000000?style=flat-square&logoColor=white)](https://cursor.com/en/install-mcp?name=%7B%7B%20project_name%20%7D%7D&config=eyJuYW1lIjoie3sgcHJvamVjdF9uYW1lIH19IiwiY29tbWFuZCI6InV2eCIsImFyZ3MiOlsiLS1mcm9tIiwie3sgcGFja2FnZV9wYXRoIH19Iiwie3sgcGFja2FnZV9uYW1lIH19Il0sImVudiI6e319)
 
 #### Or install manually:
 
@@ -112,7 +110,7 @@ Go to `Cursor Settings` -> `MCP` -> `Add new MCP Server`. Name to your liking, u
 
 #### Click the button to install:
 
-[![Add MCP Server Hoge-Name to LM Studio](https://files.lmstudio.ai/deeplink/mcp-install-light.svg)](https://lmstudio.ai/install-mcp?name=Hoge-Name&config=eyJuYW1lIjoiSG9nZS1OYW1lIiwiY29tbWFuZCI6InV2IiwiYXJncyI6WyJydW4iLCItLWRpcmVjdG9yeSIsIjwvcGF0aC90by9wYWNrYWdlPiIsIi1tIiwiPHBhY2thZ2UtbmFtZT4iXSwiZW52Ijp7fX0=)
+[![Add MCP Server {{ project_name }} to LM Studio](https://files.lmstudio.ai/deeplink/mcp-install-light.svg)](https://lmstudio.ai/install-mcp?name=%7B%7B%20project_name%20%7D%7D&config=eyJuYW1lIjoie3sgcHJvamVjdF9uYW1lIH19IiwiY29tbWFuZCI6InV2eCIsImFyZ3MiOlsiLS1mcm9tIiwie3sgcGFja2FnZV9wYXRoIH19Iiwie3sgcGFja2FnZV9uYW1lIH19Il0sImVudiI6e319)
 
 #### Or install manually:
 
@@ -122,10 +120,10 @@ Go to `Program` in the right sidebar -> `Install` -> `Edit mcp.json`. Use the st
 <details>
 <summary>Claude Code</summary>
 
-Use the Claude Code CLI to add the Hoge-Name MCP server:
+Use the Claude Code CLI to add the {{ project_name }} MCP server:
 
 ```bash
-claude mcp add Hoge-Name uv run --directory {{ package_path }} -m {{ package_name }}
+claude mcp add {{ project_name }} uvx --from {{ package_path }} {{ package_name }}
 ```
 </details>
 
@@ -141,9 +139,9 @@ Follow the MCP install [guide](https://modelcontextprotocol.io/quickstart/user),
 Create or edit the configuration file `~/.codex/config.toml` and add:
 
 ```toml
-[mcp_servers.Hoge-Name]
-command = "uv"
-args = ["run", "--directory", "{{ package_path }}", "-m", "{{ package_name }}"]
+[mcp_servers.{{ project_name }}]
+command = "uvx"
+args = ["--from", "{{ package_path }}", "{{ package_name }}"]
 ```
 
 For more information, see the [Codex MCP documentation](https://github.com/openai/codex/blob/main/codex-rs/config.md#mcp_servers).
@@ -164,14 +162,12 @@ Follow the MCP Servers [documentation](https://opencode.ai/docs/mcp-servers/). F
 {
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
-    "Hoge-Name": {
+    "{{ project_name }}": {
       "type": "local",
       "command": [
-        "uv",
-        "run",
-        "--directory",
+        "uvx",
+        "--from",
         "{{ package_path }}",
-        "-m",
         "{{ package_name }}"
       ],
       "enabled": true
@@ -189,13 +185,11 @@ GitHub Copilot Coding Agent can use MCP servers to extend its capabilities. Use 
 ```json
 {
   "mcpServers": {
-    "Hoge-Name": {
-      "command": "uv",
+    "{{ project_name }}": {
+      "command": "uvx",
       "args": [
-        "run",
-        "--directory",
+        "--from",
         "{{ package_path }}",
-        "-m",
         "{{ package_name }}"
       ],
       "env": {},
@@ -215,14 +209,15 @@ For more information, see the [GitHub Copilot Coding Agent MCP documentation](ht
 
 ### Configuration Details
 
-- **Server Name:** `Hoge-Name`
-- **Type:** Local Binary
-- **Command:** `uv`
-- **Arguments:** `run,--directory,{{ package_path }},-m,{{ package_name }}`
+- **Server Name:** `{{ project_name }}`
+- **Type:** UVX Package
+- **Package:** `{{ package_name }}`
+- **From:** `{{ package_path }}`
 
 ### Need Help?
 
 For more information about the Model Context Protocol, visit [modelcontextprotocol.io](https://modelcontextprotocol.io).
+
 
 ## Requirements
 - [uv](https://docs.astral.sh/uv/) for package management
@@ -242,7 +237,7 @@ For more information about the Model Context Protocol, visit [modelcontextprotoc
 You can test this server using the MCP Inspector:
 
 ```bash
-npx @modelcontextprotocol/inspector uv run --directory {{ package_path }} -m {{ package_name }}
+npx @modelcontextprotocol/inspector uvx --from {{ package_path }} {{ package_name }}
 ```
 
 ### Available Tools

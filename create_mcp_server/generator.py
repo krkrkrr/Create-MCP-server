@@ -52,7 +52,7 @@ def generate_mcp_server(project_dir: Path, project_name: str, description: str,
         'package_name': package_name,
         'description': description,
         'author': author,
-        'project_path': project_dir.absolute()
+        'project_path': str(project_dir.resolve())
     }
 
     # Create package directory
